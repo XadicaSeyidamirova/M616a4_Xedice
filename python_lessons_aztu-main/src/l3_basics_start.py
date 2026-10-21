@@ -31,6 +31,8 @@ print("=== Kərpic 4 ===")   # Müqayisə → True / False
 print("=== Kərpic 5 ===")   # Siyahı (list)
 # TODO: rsrp_list, indeks, len, orta
 
+
+# list verilib menim verdiyim index ile hemin indexdeki deyeri verir, 0-1e, 1-2e ve bu formada davam edir, eger 1 yazanda 1 olmasini isteyirikse, print(enodebs[antenna-1]) yazacaqyiq
 enodebs = ["GNJ0101", "GNJ9078", "GNJ9050", "GNJ3456", "GNJ4534", "GNJ2222"]
 antenna = int(input("Please enter index to show eNodeB: "))
 print(enodebs[antenna])
@@ -39,8 +41,45 @@ print(enodebs[antenna])
 print("=== Kərpic 6 ===")   # Lüğət (dict)
 # TODO: row = {...}, row["region"]
 
-print("=== Kərpic 7 ===")   # Dövr (for) və şərt (if / else)
+# birinci ilkin formani yazir daha sonra dictricti deyisir yeni row a elave edir ve print edir
+row = {"cell id": "LLNK4545O5", "district": "Astara", "rsrp_dbm": -87}
+print(row)
+row["district"] = "Lerik"
+print(row)
+
+
+# key isteyir, yazdiqdan sonra qarisindaki valueni verir 
+row = {"cell id": "LLNK4545O5", "district": "Astara", "rsrp_dbm": -87}
+key=(input("Please enter key to show your value:"))
+print(row[key])
+
+# deyisdirmek istediyimiz keyi isteyir daha sonra hemin keyin hansi value ile deyisdirmek istediyimizi qeyd edirik ve yeni row-u verir
+row = {"cell id": "LLNK4545O5", "district": "Astara", "rsrp_dbm": -87}
+key=input("Please enter key to change:")
+new_value = input("Please enter new value:")
+row[key] = new_value
+print(row)
+
+
+rsrp_values = [ -96, -89, -90, -104, -113, -123]
+entered_value = int(input("Please enter a number for looping: "))
+for x in rsrp_values:
+    print ( x * entered_value )
+
+ # print("=== Kərpic 7 ===")   # Dövr (for) və şərt (if / else)
 # TODO: zəif ölçmələri saymaq
+
+rsrp_values = [ -96, -89, -90, -104, -113, -123]
+weak = 0 
+for v in rsrp_values: 
+    if v < - 105 :
+        print(v, "-> weak")
+        weak = weak +1
+    else :
+        print(v, "-> normal")
+print(v, "-> normal")
+
+
 
 print("=== Kərpic 8 ===")   # Funksiya: çağırmaq və yaratmaq
 # TODO: round, len, max; def is_weak(rsrp)
